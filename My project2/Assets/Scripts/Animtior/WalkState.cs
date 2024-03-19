@@ -39,7 +39,7 @@ public class WalkState : StateMachineBehaviour
             animator.SetBool("IsWalk", false);
         }
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        if (distance > chaserange)
+        if (distance < chaserange)
         {
             animator.SetBool("IsChase",true);
         }

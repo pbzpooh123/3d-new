@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class ChaseState : StateMachineBehaviour
 {
     private Transform player;
-    private float timer;
     private NavMeshAgent agent;
     
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -21,12 +20,12 @@ public class ChaseState : StateMachineBehaviour
     {
         agent.SetDestination(player.position);
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        if (distance > 20)
+        if (distance > 16)
         {
             animator.SetBool("IsChase",false);
         }
 
-        if (distance < 13)
+        if (distance < 10)
         {
             animator.SetBool("IsAttack",true);
         }

@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+
 
 public class AttackState : StateMachineBehaviour
 {
     private Transform player;
-    private NavMeshAgent agent;
+    
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        agent = animator.GetComponent<NavMeshAgent>();
+        
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
     }
@@ -19,7 +19,7 @@ public class AttackState : StateMachineBehaviour
     {
         animator.transform.LookAt(player);
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        if (distance > 13)
+        if (distance > 11)
         {
             animator.SetBool("IsAttack",false);
         }

@@ -8,7 +8,7 @@ public class IdleState : StateMachineBehaviour
 
     private Transform player;
 
-    private float chaserange = 20;
+    private float chaserange = 15;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -27,7 +27,7 @@ public class IdleState : StateMachineBehaviour
         }
 
         float distance = Vector3.Distance(player.position, animator.transform.position);
-        if (distance > chaserange)
+        if (distance < chaserange)
         {
             animator.SetBool("IsChase",true);
         }
