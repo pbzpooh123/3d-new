@@ -8,7 +8,17 @@ public class Bullet : MonoBehaviour
    {
       if (collision.gameObject.CompareTag("Target"))
       {
-         print("Hit" + gameObject.name + "!");
+         Destroy(gameObject);
+         
+      }
+      
+   }
+
+   public void OnTriggerEnter(Collider other)
+   {
+      if (other.tag == "Enemy")
+      {
+         other.GetComponent<Enemy>().Takedam(10);
          Destroy(gameObject);
       }
    }
