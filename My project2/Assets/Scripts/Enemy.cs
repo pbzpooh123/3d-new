@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public float shootingspeed;
     private Transform player;
     [SerializeField] Animator animator;
+    [SerializeField] public GameOver GameOver;
     
     // Start is called before the first frame update
     void Start()
@@ -62,5 +63,9 @@ public class Enemy : MonoBehaviour
         bulletRig.AddForce(bulletRig.transform.forward * shootingspeed,ForceMode.Impulse);
         Destroy(bulletObj, 2);
 
+    }
+    void Gameoversceen()
+    {
+        GameOver.Setup();
     }
 }

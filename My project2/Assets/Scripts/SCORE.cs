@@ -41,4 +41,9 @@ public class SCORE : MonoBehaviour
         score += 50;
         ScoreText.text = "Point:" + score.ToString();
     }
+    
+    public void showpoint()
+    {
+        ScoreText.text = "Point:" + score.ToString();
+    }
 }
