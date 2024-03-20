@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         {
             _animator.SetTrigger("Die");
             GetComponent<Collider>().enabled = false;
+            SCORE.isntance.Killpoint();
         }
         
     }

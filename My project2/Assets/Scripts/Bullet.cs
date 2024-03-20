@@ -20,11 +20,13 @@ public class Bullet : MonoBehaviour
       {
          other.GetComponent<Enemy>().Takedam(10);
          Destroy(gameObject);
+         SCORE.isntance.Addpoint();
       }
       if (other.tag == "Player")
       {
          other.GetComponent<Player>().Takedam(10);
          Destroy(gameObject);
+         SCORE.isntance.Removepoint();
       }
    }
 }
