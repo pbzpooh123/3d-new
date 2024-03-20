@@ -12,6 +12,7 @@ public class AttackState : StateMachineBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -30,6 +31,7 @@ public class AttackState : StateMachineBehaviour
     {
        
     }
+    
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

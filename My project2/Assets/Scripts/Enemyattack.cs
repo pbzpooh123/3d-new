@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+
+public class Enemyattack : MonoBehaviour
 {
-    [SerializeField] public int Hp;
-    [SerializeField] private Animator _animator;
-    [SerializeField] public Slider Hpbar;
     [SerializeField] private float timer = 5;
     private float bulletTime;
     public GameObject enemyBullet;
@@ -22,31 +19,18 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void Takedam(int dam)
-    {
-        Hp -= dam;
-        if (Hp <= 0)
-        {
-            _animator.SetTrigger("Die");
-            GetComponent<Collider>().enabled = false;
-        }
-        
-    }
-
+    // Update is called once per frame
     void Update()
     {
         float distance = Vector3.Distance(player.position, animator.transform.position);
         if (distance < 10)
         {
-            if (Hp > 0)
-            {
-                ShootAtPlayer();
-            }
-           
+            ShootAtPlayer();
         }
-        Hpbar.value = Hp;
+        
+
     }
-    
+
     public void ShootAtPlayer()
     {
         
@@ -62,4 +46,6 @@ public class Enemy : MonoBehaviour
         Destroy(bulletObj, 5);
 
     }
+    
+   
 }
