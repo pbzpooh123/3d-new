@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] public GameOver GameOver;
     [SerializeField] public int Hp;
     [SerializeField] public Slider Hpbar;
-    void start()
+    void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
