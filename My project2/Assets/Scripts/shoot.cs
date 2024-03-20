@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using StarterAssets;
+using Unity.Mathematics;
 
-public class Weapon : MonoBehaviour
+public class shoot : MonoBehaviour
 {
     private StarterAssetsInputs input;
     public GameObject bulletPrefeb;
@@ -45,5 +45,5 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(bullet);
     }
-    
+
 }
